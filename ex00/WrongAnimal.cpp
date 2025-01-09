@@ -6,7 +6,7 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 14:48:46 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/01/09 14:54:21 by scraeyme         ###   ########.fr       */
+/*   Updated: 2025/01/09 16:00:22 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,23 @@ WrongAnimal::WrongAnimal(WrongAnimal const &copy)
 
 WrongAnimal &WrongAnimal::operator=(WrongAnimal const &obj)
 {
+	if (this == &obj)
+		return (*this);
+	this->_type = obj._type;
 	return (*this);
 }
 
 WrongAnimal::~WrongAnimal()
 {
 	std::cout << "WrongAnimal destructor called!" << std::endl;
+}
+
+std::string WrongAnimal::getType() const
+{
+	return (this->_type);
+}
+
+void WrongAnimal::makeSound() const
+{
+	std::cout << "*Meows wrongly*" << std::endl;
 }

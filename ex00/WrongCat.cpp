@@ -6,7 +6,7 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 14:48:48 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/01/09 14:54:23 by scraeyme         ###   ########.fr       */
+/*   Updated: 2025/01/09 16:00:11 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 WrongCat::WrongCat()
 {
+	this->_type = "WrongCat";
 	std::cout << "WrongCat constructor called!" << std::endl;
 }
 
@@ -25,6 +26,9 @@ WrongCat::WrongCat(WrongCat const &copy)
 
 WrongCat &WrongCat::operator=(WrongCat const &obj)
 {
+	if (this == &obj)
+		return (*this);
+	this->_type = obj._type;
 	return (*this);
 }
 
