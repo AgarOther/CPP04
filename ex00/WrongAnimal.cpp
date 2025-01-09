@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 14:09:49 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/01/09 14:38:26 by scraeyme         ###   ########.fr       */
+/*   Created: 2025/01/09 14:48:46 by scraeyme          #+#    #+#             */
+/*   Updated: 2025/01/09 14:54:21 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include <iostream>
 
-Cat::Cat()
+WrongAnimal::WrongAnimal()
 {
-	std::cout << "Cat constructor called!" << std::endl;
-	this->_type = "Cat";
+	std::cout << "WrongAnimal constructor called!" << std::endl;
 }
 
-Cat::Cat(Cat const &copy)
+WrongAnimal::WrongAnimal(WrongAnimal const &copy)
 {
 	*this = copy;
 }
 
-Cat &Cat::operator=(Cat const &obj)
+WrongAnimal &WrongAnimal::operator=(WrongAnimal const &obj)
 {
-	if (this == &obj)
-		return (*this);
-	this->_type = obj._type;
 	return (*this);
 }
 
-Cat::~Cat()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "Cat destructor called!" << std::endl;
+	std::cout << "WrongAnimal destructor called!" << std::endl;
 }

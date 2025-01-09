@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 13:25:46 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/01/09 14:56:02 by scraeyme         ###   ########.fr       */
+/*   Created: 2025/01/09 14:48:48 by scraeyme          #+#    #+#             */
+/*   Updated: 2025/01/09 14:54:23 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
+#include <iostream>
 
-int main()
+WrongCat::WrongCat()
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	std::cout << "WrongCat constructor called!" << std::endl;
+}
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
+WrongCat::WrongCat(WrongCat const &copy)
+{
+	*this = copy;
+}
 
-	const WrongAnimal* wrong = new WrongCat();
+WrongCat &WrongCat::operator=(WrongCat const &obj)
+{
+	return (*this);
+}
 
-	delete meta;
-	delete j;
-	delete i;
-	return 0;
+WrongCat::~WrongCat()
+{
+	std::cout << "WrongCat destructor called!" << std::endl;
 }

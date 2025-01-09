@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 14:09:49 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/01/09 14:38:26 by scraeyme         ###   ########.fr       */
+/*   Created: 2025/01/09 14:45:40 by scraeyme          #+#    #+#             */
+/*   Updated: 2025/01/09 14:48:00 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#pragma once
 
-Cat::Cat()
-{
-	std::cout << "Cat constructor called!" << std::endl;
-	this->_type = "Cat";
-}
+#include "WrongAnimal.hpp"
 
-Cat::Cat(Cat const &copy)
+class WrongCat: public WrongAnimal
 {
-	*this = copy;
-}
+	public:
+		WrongCat();
+		WrongCat(WrongCat const &copy);
+		WrongCat &operator=(WrongCat const &obj);
+		~WrongCat();
+};
 
-Cat &Cat::operator=(Cat const &obj)
-{
-	if (this == &obj)
-		return (*this);
-	this->_type = obj._type;
-	return (*this);
-}
-
-Cat::~Cat()
-{
-	std::cout << "Cat destructor called!" << std::endl;
-}

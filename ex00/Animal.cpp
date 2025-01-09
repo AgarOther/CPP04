@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 13:27:35 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/01/09 13:35:02 by scraeyme         ###   ########.fr       */
+/*   Created: 2025/01/09 14:08:02 by scraeyme          #+#    #+#             */
+/*   Updated: 2025/01/09 14:40:42 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 Animal::Animal()
 {
-	std::cout << "Animal unknown spawned!" << std::endl;
+	std::cout << "Animal constructor called!" << std::endl;
+	this->_type = "Animal";
 }
 
-Animal::Animal(const Animal &copy)
+Animal::Animal(Animal const &copy)
 {
 	*this = copy;
 }
@@ -30,23 +31,22 @@ Animal &Animal::operator=(Animal const &obj)
 	return (*this);
 }
 
-Animal::Animal(const std::string &type)
-{
-	std::cout << "Animal " << type << " spawned!" << std::endl;
-	this->_type = type;
-}
-
 Animal::~Animal()
 {
-	std::cout << "Animal " << this->_type << " destroyed!" << std::endl;
+	std::cout << "Animal destructor called!" << std::endl;
 }
 
-void Animal::makeSound()
+std::string Animal::getType() const
 {
-	if (this->_type == "Dog")
-		std::cout << "BARK BARK!" << std::endl;
-	else if (this->_type == "Cat")
-		std::cout << "MEOW MEOW!" << std::endl;
+	return (this->_type);
+}
+
+void Animal::makeSound() const
+{
+	if (this->_type == "Cat")
+		std::cout << "MEOW!" << std::endl;
+	else if (this->_type == "Dog")
+		std::cout << "Can I pet dat dawg?" << std::endl;
 	else
-		std::cout << "*Unknown sound*" << std::endl;
+		std::cout << "Wtf is this animal bro" << std::endl;
 }

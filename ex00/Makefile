@@ -6,7 +6,10 @@ CFLAGS				=	-Wall -Wextra -Werror -std=c++98
 NAME				=	animal
 
 # Sources & Includes
-SRCS				= 	main.cpp
+SRCS				= 	main.cpp \
+						Animal.cpp \
+						Cat.cpp \
+						Dog.cpp
 OBJ_FOLDER			=	objs
 
 # Objects

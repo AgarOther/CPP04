@@ -5,19 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 13:30:50 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/01/09 13:31:34 by scraeyme         ###   ########.fr       */
+/*   Created: 2025/01/09 14:10:58 by scraeyme          #+#    #+#             */
+/*   Updated: 2025/01/09 14:42:49 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
-# include "Animal.hpp"
+#pragma once
 
-class Cat : public Animal
+#include "Animal.hpp"
+
+class Cat: public Animal
 {
 	public:
-		void makeSound();
+		Cat();
+		Cat(Cat const &copy);
+		Cat &operator=(Cat const &obj);
+		~Cat();
 };
-
-#endif
