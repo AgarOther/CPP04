@@ -6,7 +6,7 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 14:09:49 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/01/10 14:10:26 by scraeyme         ###   ########.fr       */
+/*   Updated: 2025/01/10 14:13:11 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ Cat &Cat::operator=(Cat const &obj)
 {
 	if (this == &obj)
 		return (*this);
-	//Animal::operator=(obj);
 	delete this->_brain;
 	this->_brain = new Brain(*obj._brain);
 	return (*this);
