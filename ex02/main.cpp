@@ -6,11 +6,11 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:58:00 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/04/16 01:10:48 by scraeyme         ###   ########.fr       */
+/*   Updated: 2025/04/16 01:10:44 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "colors.hpp"
@@ -18,20 +18,20 @@
 
 int main()
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	const Dog *j = new Dog();
+	const Cat *i = new Cat();
 
 	Dog dog;
 	{
 		Dog woof = dog;
 	}
-	Animal *megawoof(&dog);
+	Dog *megawoof(&dog);
 
 	Cat cat;
 	{
 		Cat meow = cat;
 	}
-	Animal *megameow = new Cat(cat);
+	Cat *megameow = new Cat(cat);
 
 	std::cout << j->getBrain()->getIdeas(1) << std::endl;
 	std::cout << megawoof->getBrain()->getIdeas(1) << std::endl;
