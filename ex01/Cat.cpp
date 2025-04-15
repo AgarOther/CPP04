@@ -6,7 +6,7 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:58:10 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/04/15 17:51:12 by scraeyme         ###   ########.fr       */
+/*   Updated: 2025/04/15 21:11:09 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ Cat::Cat() : Animal()
 	this->_brain = new Brain();
 }
 
-Cat::Cat(const Cat &copy)
+Cat::Cat(const Cat &copy) : Animal()
 {
+	this->type = copy.type;
 	this->_brain = new Brain(*copy.getBrain());
 }
 
@@ -30,7 +31,8 @@ Cat &Cat::operator=(const Cat &obj)
 	if (&obj == this)
 		return (*this);
 	this->type = obj.type;
-	this->_brain = obj._brain;
+	delete this->_brain;
+	this->_brain = new Brain(*obj.getBrain());
 	return (*this);
 }
 

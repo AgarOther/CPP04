@@ -6,7 +6,7 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:58:10 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/04/15 17:32:45 by scraeyme         ###   ########.fr       */
+/*   Updated: 2025/04/15 21:01:42 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ WrongCat::WrongCat() : WrongAnimal()
 	this->type = "WrongCat";
 }
 
-WrongCat::WrongCat(const WrongCat &copy)
+WrongCat::WrongCat(const WrongCat &copy) : WrongAnimal()
 {
 	*this = copy;
 }

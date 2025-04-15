@@ -6,7 +6,7 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:58:10 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/04/15 17:24:34 by scraeyme         ###   ########.fr       */
+/*   Updated: 2025/04/15 21:01:29 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Cat::Cat() : Animal()
 	this->type = "Cat";
 }
 
-Cat::Cat(const Cat &copy)
+Cat::Cat(const Cat &copy) : Animal()
 {
 	*this = copy;
 }

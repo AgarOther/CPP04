@@ -6,7 +6,7 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:58:10 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/04/15 17:24:37 by scraeyme         ###   ########.fr       */
+/*   Updated: 2025/04/15 21:01:31 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Dog::Dog() : Animal()
 	this->type = "Dog";
 }
 
-Dog::Dog(const Dog &copy)
+Dog::Dog(const Dog &copy) : Animal()
 {
 	*this = copy;
 }

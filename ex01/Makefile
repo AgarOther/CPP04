@@ -3,7 +3,7 @@ CC					=	c++
 CFLAGS				=	-Wall -Wextra -Werror -std=c++98
 
 # Names
-NAME				=	polymorphism
+NAME				=	i
 
 # Sources & Includes
 SRCS				= 	main.cpp \
