@@ -5,36 +5,52 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 14:09:49 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/01/10 14:13:26 by scraeyme         ###   ########.fr       */
+/*   Created: 2025/04/15 16:58:10 by scraeyme          #+#    #+#             */
+/*   Updated: 2025/04/15 17:51:12 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
+#include <iostream>
 
-Cat::Cat()
+Cat::Cat() : Animal()
 {
-	std::cout << "Cat constructor called!" << std::endl;
-	this->_type = "Cat";
+	std::cout << "A Cat spawned!" << std::endl;
+	this->type = "Cat";
+	this->_brain = new Brain();
 }
 
-Cat::Cat(Cat const &copy)
+Cat::Cat(const Cat &copy)
 {
-	*this = copy;
+	this->_brain = new Brain(*copy.getBrain());
 }
 
-Cat &Cat::operator=(Cat const &obj)
+Cat &Cat::operator=(const Cat &obj)
 {
-	if (this == &obj)
+	if (&obj == this)
 		return (*this);
-	this->_type = obj._type;
-	delete this->_brain;
-	this->_brain = new Brain(*obj._brain);
+	this->type = obj.type;
+	this->_brain = obj._brain;
 	return (*this);
 }
 
 Cat::~Cat()
 {
+	std::cout << "A Cat despawned!" << std::endl;
 	delete this->_brain;
-	std::cout << "Cat destructor called!" << std::endl;
+}
+
+void Cat::makeSound() const
+{
+	std::cout << "*MeowMeow*" << std::endl;
+}
+
+const std::string &Cat::getType() const
+{
+	return (this->type);
+}
+
+const Brain *Cat::getBrain() const
+{
+	return (this->_brain);
 }

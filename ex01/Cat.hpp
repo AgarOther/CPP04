@@ -5,23 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 14:10:58 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/01/10 13:01:05 by scraeyme         ###   ########.fr       */
+/*   Created: 2025/04/15 16:58:15 by scraeyme          #+#    #+#             */
+/*   Updated: 2025/04/15 17:46:13 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-
+#include <string>
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Cat: public Animal
+class Cat : public Animal
 {
 	public:
 		Cat();
-		Cat(Cat const &copy);
-		Cat &operator=(Cat const &obj);
+		Cat(const Cat &copy);
+		Cat &operator=(const Cat &obj);
 		~Cat();
+
+		void makeSound() const;
+		const std::string &getType() const;
+		const Brain *getBrain() const;
+	protected:
+		std::string	type;
 	private:
 		Brain *_brain;
 };

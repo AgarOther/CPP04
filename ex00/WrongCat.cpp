@@ -5,34 +5,44 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 14:48:48 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/01/09 16:00:11 by scraeyme         ###   ########.fr       */
+/*   Created: 2025/04/15 16:58:10 by scraeyme          #+#    #+#             */
+/*   Updated: 2025/04/15 17:32:45 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
 #include <iostream>
 
-WrongCat::WrongCat()
+WrongCat::WrongCat() : WrongAnimal()
 {
-	this->_type = "WrongCat";
-	std::cout << "WrongCat constructor called!" << std::endl;
+	std::cout << "A WrongCat spawned!" << std::endl;
+	this->type = "WrongCat";
 }
 
-WrongCat::WrongCat(WrongCat const &copy)
+WrongCat::WrongCat(const WrongCat &copy)
 {
 	*this = copy;
 }
 
-WrongCat &WrongCat::operator=(WrongCat const &obj)
+WrongCat &WrongCat::operator=(const WrongCat &obj)
 {
-	if (this == &obj)
+	if (&obj == this)
 		return (*this);
-	this->_type = obj._type;
+	this->type = obj.type;
 	return (*this);
 }
 
 WrongCat::~WrongCat()
 {
-	std::cout << "WrongCat destructor called!" << std::endl;
+	std::cout << "A WrongCat despawned!" << std::endl;
+}
+
+void WrongCat::makeSound() const
+{
+	std::cout << "*WrongMeowWrongMeow*" << std::endl;
+}
+
+const std::string &WrongCat::getType() const
+{
+	return (this->type);
 }

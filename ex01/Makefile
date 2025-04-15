@@ -3,7 +3,7 @@ CC					=	c++
 CFLAGS				=	-Wall -Wextra -Werror -std=c++98
 
 # Names
-NAME				=	fire
+NAME				=	polymorphism
 
 # Sources & Includes
 SRCS				= 	main.cpp \
@@ -11,10 +11,11 @@ SRCS				= 	main.cpp \
 						Cat.cpp \
 						Dog.cpp \
 						Brain.cpp
+
 OBJ_FOLDER			=	objs
 
 # Objects
-OBJS				=	$(patsubst %.c, $(OBJ_FOLDER)/%.o, $(SRCS))
+OBJS				=	$(patsubst %.cpp, $(OBJ_FOLDER)/%.o, $(SRCS))
 
 # Custom Makefile Flags
 MAKEFLAGS			+=	--no-print-directory --silent

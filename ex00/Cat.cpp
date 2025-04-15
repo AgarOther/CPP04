@@ -5,33 +5,44 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 14:09:49 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/01/09 14:38:26 by scraeyme         ###   ########.fr       */
+/*   Created: 2025/04/15 16:58:10 by scraeyme          #+#    #+#             */
+/*   Updated: 2025/04/15 17:24:34 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
+#include <iostream>
 
-Cat::Cat()
+Cat::Cat() : Animal()
 {
-	std::cout << "Cat constructor called!" << std::endl;
-	this->_type = "Cat";
+	std::cout << "A Cat spawned!" << std::endl;
+	this->type = "Cat";
 }
 
-Cat::Cat(Cat const &copy)
+Cat::Cat(const Cat &copy)
 {
 	*this = copy;
 }
 
-Cat &Cat::operator=(Cat const &obj)
+Cat &Cat::operator=(const Cat &obj)
 {
-	if (this == &obj)
+	if (&obj == this)
 		return (*this);
-	this->_type = obj._type;
+	this->type = obj.type;
 	return (*this);
 }
 
 Cat::~Cat()
 {
-	std::cout << "Cat destructor called!" << std::endl;
+	std::cout << "A Cat despawned!" << std::endl;
+}
+
+void Cat::makeSound() const
+{
+	std::cout << "*MeowMeow*" << std::endl;
+}
+
+const std::string &Cat::getType() const
+{
+	return (this->type);
 }

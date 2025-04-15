@@ -5,20 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 14:10:58 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/01/09 14:42:51 by scraeyme         ###   ########.fr       */
+/*   Created: 2025/04/15 16:58:15 by scraeyme          #+#    #+#             */
+/*   Updated: 2025/04/15 17:22:39 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-
+#include <string>
 #include "Animal.hpp"
-
-class Dog: public Animal
+ 
+class Dog : public Animal
 {
 	public:
 		Dog();
-		Dog(Dog const &copy);
-		Dog &operator=(Dog const &obj);
+		Dog(const Dog &copy);
+		Dog &operator=(const Dog &obj);
 		~Dog();
+
+		void makeSound() const;
+		const std::string &getType() const;
+	protected:
+		std::string	type;
 };

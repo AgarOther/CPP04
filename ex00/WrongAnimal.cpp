@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 14:48:46 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/01/09 16:00:22 by scraeyme         ###   ########.fr       */
+/*   Created: 2025/04/15 16:58:10 by scraeyme          #+#    #+#             */
+/*   Updated: 2025/04/15 17:33:07 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,33 +15,34 @@
 
 WrongAnimal::WrongAnimal()
 {
-	std::cout << "WrongAnimal constructor called!" << std::endl;
+	std::cout << "A WrongAnimal spawned!" << std::endl;
+	this->type = "WrongAnimal";
 }
 
-WrongAnimal::WrongAnimal(WrongAnimal const &copy)
+WrongAnimal::WrongAnimal(const WrongAnimal &copy)
 {
 	*this = copy;
 }
 
-WrongAnimal &WrongAnimal::operator=(WrongAnimal const &obj)
+WrongAnimal &WrongAnimal::operator=(const WrongAnimal &obj)
 {
-	if (this == &obj)
+	if (&obj == this)
 		return (*this);
-	this->_type = obj._type;
+	this->type = obj.type;
 	return (*this);
 }
 
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << "WrongAnimal destructor called!" << std::endl;
-}
-
-std::string WrongAnimal::getType() const
-{
-	return (this->_type);
+	std::cout << "A WrongAnimal despawned!" << std::endl;
 }
 
 void WrongAnimal::makeSound() const
 {
-	std::cout << "*Meows wrongly*" << std::endl;
+	std::cout << "*Unknown WrongAnimal noise*" << std::endl;
+}
+
+const std::string &WrongAnimal::getType() const
+{
+	return (this->type);
 }
