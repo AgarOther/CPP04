@@ -6,7 +6,7 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:58:15 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/04/16 01:08:26 by scraeyme         ###   ########.fr       */
+/*   Updated: 2025/04/16 13:25:47 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ class AAnimal
 		virtual ~AAnimal();
 
 		virtual void makeSound() const = 0;
-		virtual const std::string &getType() const = 0;
-		virtual const Brain *getBrain() const = 0;
+		virtual const std::string &getType() const;
 	protected:
 		std::string	type;
 };

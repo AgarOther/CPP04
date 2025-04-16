@@ -6,7 +6,7 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:58:00 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/04/16 01:10:48 by scraeyme         ###   ########.fr       */
+/*   Updated: 2025/04/16 13:34:55 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,22 @@ int main()
 	megawoof->makeSound();
 	megameow->makeSound();
 
+	std::cout << std::endl << "----- Animal Array -----" << std::endl;
+
+	Animal	*animals[10];
+	for (int i = 0; i < 10; i++)
+	{
+		if (i % 2)
+			animals[i] = new Dog();
+		else
+			animals[i] = new Cat();
+	}
+
 	delete j;
 	delete i;
 	delete megameow;
+	for (int i = 0; i < 10; i++)
+		delete animals[i];
 
 	return 0;
 }

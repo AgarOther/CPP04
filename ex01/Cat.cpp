@@ -6,7 +6,7 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:58:10 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/04/15 21:11:09 by scraeyme         ###   ########.fr       */
+/*   Updated: 2025/04/16 13:26:26 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,6 @@ Cat::~Cat()
 void Cat::makeSound() const
 {
 	std::cout << "*MeowMeow*" << std::endl;
-}
-
-const std::string &Cat::getType() const
-{
-	return (this->type);
 }
 
 const Brain *Cat::getBrain() const

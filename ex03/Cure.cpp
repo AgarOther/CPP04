@@ -1,30 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 16:58:15 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/04/16 13:51:56 by scraeyme         ###   ########.fr       */
+/*   Created: 2025/04/16 13:45:21 by scraeyme          #+#    #+#             */
+/*   Updated: 2025/04/16 14:06:34 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <string>
-#include "AAnimal.hpp"
-#include "Brain.hpp"
- 
-class Dog : public AAnimal
-{
-	public:
-		Dog();
-		Dog(const Dog &copy);
-		Dog &operator=(const Dog &obj);
-		~Dog();
+#include "Cure.hpp"
+#include <iostream>
 
-		void makeSound() const;
-		const Brain *getBrain() const;
-	private:
-		Brain *_brain;
-};
+Cure::Cure() : AMateria("Cure")
+{
+	std::cout << "A Cure spawned!" << std::endl;
+}
+
+Cure::Cure(const Cure &copy) : AMateria(copy)
+{
+	
+}
+
+Cure &Cure::operator=(const Cure &obj)
+{
+	if (&obj == this)
+		return (*this);
+	return (*this);
+}
+
+Cure::~Cure()
+{
+	std::cout << "A Cure despawned!" << std::endl;
+}
+
+AMateria *Cure::clone() const
+{
+	return new Cure(*this);
+}

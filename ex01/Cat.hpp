@@ -6,7 +6,7 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:58:15 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/04/15 17:46:13 by scraeyme         ###   ########.fr       */
+/*   Updated: 2025/04/16 13:52:43 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,7 @@ class Cat : public Animal
 		~Cat();
 
 		void makeSound() const;
-		const std::string &getType() const;
 		const Brain *getBrain() const;
-	protected:
-		std::string	type;
 	private:
 		Brain *_brain;
 };

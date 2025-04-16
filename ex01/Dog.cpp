@@ -6,7 +6,7 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 16:58:10 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/04/15 21:10:58 by scraeyme         ###   ########.fr       */
+/*   Updated: 2025/04/16 13:26:30 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,6 @@ Dog::~Dog()
 void Dog::makeSound() const
 {
 	std::cout << "*WoofWoof*" << std::endl;
-}
-
-const std::string &Dog::getType() const
-{
-	return (this->type);
 }
 
 const Brain *Dog::getBrain() const

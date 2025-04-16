@@ -1,48 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.cpp                                        :+:      :+:    :+:   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 16:58:10 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/04/16 13:25:49 by scraeyme         ###   ########.fr       */
+/*   Created: 2025/04/16 14:20:13 by scraeyme          #+#    #+#             */
+/*   Updated: 2025/04/16 14:22:32 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
+#include "MateriaSource.hpp"
 #include <iostream>
 
-AAnimal::AAnimal()
+MateriaSource::MateriaSource()
 {
-	std::cout << "An AAnimal spawned!" << std::endl;
-	this->type = "AAnimal";
+	std::cout << "A MateriaSource spawned!" << std::endl;
 }
 
-AAnimal::AAnimal(const AAnimal &copy)
+MateriaSource::MateriaSource(const MateriaSource &copy)
 {
-	*this = copy;
+	
 }
 
-AAnimal &AAnimal::operator=(const AAnimal &obj)
+MateriaSource &MateriaSource::operator=(const MateriaSource &obj)
 {
 	if (&obj == this)
 		return (*this);
-	this->type = obj.type;
 	return (*this);
 }
 
-AAnimal::~AAnimal()
+MateriaSource::~MateriaSource()
 {
-	std::cout << "An AAnimal despawned!" << std::endl;
+	std::cout << "A MateriaSource despawned!" << std::endl;
 }
 
-void AAnimal::makeSound() const
+void MateriaSource::learnMateria(AMateria *materia)
 {
-	std::cout << "*Unknown AAnimal noise*" << std::endl;
+
 }
 
-const std::string &AAnimal::getType() const
+AMateria *MateriaSource::createMateria(std::string const &type)
 {
-	return (this->type);
+	
 }

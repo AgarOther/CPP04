@@ -1,30 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 16:58:15 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/04/16 13:51:56 by scraeyme         ###   ########.fr       */
+/*   Created: 2025/04/16 13:45:21 by scraeyme          #+#    #+#             */
+/*   Updated: 2025/04/16 14:02:47 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <string>
-#include "AAnimal.hpp"
-#include "Brain.hpp"
- 
-class Dog : public AAnimal
-{
-	public:
-		Dog();
-		Dog(const Dog &copy);
-		Dog &operator=(const Dog &obj);
-		~Dog();
+#include "Ice.hpp"
+#include <iostream>
 
-		void makeSound() const;
-		const Brain *getBrain() const;
-	private:
-		Brain *_brain;
-};
+Ice::Ice() : AMateria("ice")
+{
+	std::cout << "An Ice spawned!" << std::endl;
+}
+
+Ice::Ice(const Ice &copy) : AMateria(copy)
+{
+	
+}
+
+Ice &Ice::operator=(const Ice &obj)
+{
+	if (&obj == this)
+		return (*this);
+	return (*this);
+}
+
+Ice::~Ice()
+{
+	std::cout << "An Ice despawned!" << std::endl;
+}
+
+AMateria *Ice::clone() const
+{
+	return new Ice(*this);
+}

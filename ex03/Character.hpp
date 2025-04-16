@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 16:58:15 by scraeyme          #+#    #+#             */
-/*   Updated: 2025/04/16 13:51:56 by scraeyme         ###   ########.fr       */
+/*   Created: 2025/04/16 13:43:47 by scraeyme          #+#    #+#             */
+/*   Updated: 2025/04/16 14:26:33 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+#include "AMateria.hpp"
 #include <string>
-#include "AAnimal.hpp"
-#include "Brain.hpp"
- 
-class Dog : public AAnimal
-{
-	public:
-		Dog();
-		Dog(const Dog &copy);
-		Dog &operator=(const Dog &obj);
-		~Dog();
 
-		void makeSound() const;
-		const Brain *getBrain() const;
+class Character : public ICharacter
+{
 	private:
-		Brain *_brain;
+		Character();
+		std::string _name;
+		AMateria *inventory[4];
+	public:
+		Character(const std::string &name);
+		Character(const Character &copy);
+		Character &operator=(const Character &obj);
+		~Character();
+
+		const std::string &getName() const;
+		void equip(AMateria* m);
+		void unequip(int idx);
+		void use(int idx, ICharacter& target);
 };
