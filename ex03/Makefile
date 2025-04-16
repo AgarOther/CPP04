@@ -1,12 +1,17 @@
 # Compilation
 CC					=	c++
-CFLAGS				=	-Wall -Wextra -Werror -std=c++98
+CFLAGS				=	-Wall -Wextra -Werror -std=c++98 -g
 
 # Names
 NAME				=	interface
 
 # Sources & Includes
-SRCS				= 	main.cpp
+SRCS				= 	main.cpp \
+						AMateria.cpp \
+						Character.cpp \
+						Cure.cpp \
+						Ice.cpp \
+						MateriaSource.cpp
 
 OBJ_FOLDER			=	objs
 
